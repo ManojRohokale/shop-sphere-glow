@@ -62,14 +62,12 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				shop: {
-					'purple': '#8B5CF6',
-					'purple-light': '#D6BCFA',
-					'purple-dark': '#6E59A5',
-					'gray': '#8E9196',
-					'gray-light': '#F1F0FB',
-					'gray-dark': '#1A1F2C',
-				}
+				'shop-purple': '#8B5CF6',
+				'shop-purple-light': '#D6BCFA',
+				'shop-purple-dark': '#6E59A5',
+				'shop-gray': '#8E9196',
+				'shop-gray-light': '#F1F0FB',
+				'shop-gray-dark': '#1A1F2C',
 			},
 			fontFamily: {
 				'sans': ['Inter', 'sans-serif'],

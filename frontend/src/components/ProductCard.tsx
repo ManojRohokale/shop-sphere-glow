@@ -1,9 +1,10 @@
-
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Heart, ShoppingBag } from "lucide-react";
+import { Heart, ShoppingBag, ShoppingCart } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { useCart } from "@/lib/cart-context";
+import { useCartToast } from "@/components/Toast";
 
 export interface ProductProps {
   id: string;
@@ -13,6 +14,7 @@ export interface ProductProps {
   category: string;
   isNew?: boolean;
   isSale?: boolean;
+  description?: string;
 }
 
 const ProductCard = ({ 
@@ -22,9 +24,22 @@ const ProductCard = ({
   image, 
   category, 
   isNew = false, 
-  isSale = false 
+  isSale = false,
+  description
 }: ProductProps) => {
   const [isHovered, setIsHovered] = useState(false);
+  const { addToCart } = useCart();
+  const { showAddToCartToast } = useCartToast();
+
+  const handleAddToCart = () => {
+    addToCart({
+      id,
+      name,
+      price,
+      image,
+    });
+    showAddToCartToast(name);
+  };
 
   return (
     <Card 
@@ -64,8 +79,9 @@ const ProductCard = ({
           <Button 
             size="sm" 
             className="rounded-full bg-shop-purple hover:bg-shop-purple-dark"
+            onClick={handleAddToCart}
           >
-            <ShoppingBag className="h-4 w-4 mr-2" />
+            <ShoppingCart className="h-4 w-4 mr-2" />
             Add to Cart
           </Button>
         </div>
@@ -74,6 +90,9 @@ const ProductCard = ({
       <div className="p-4">
         <div className="text-sm text-gray-500 mb-1">{category}</div>
         <h3 className="font-medium text-lg mb-1 line-clamp-1">{name}</h3>
+        {description && (
+          <p className="text-sm text-gray-500 mb-2">{description}</p>
+        )}
         <div className="font-semibold text-shop-purple-dark">
           ${price.toFixed(2)}
           {isSale && <span className="ml-2 text-gray-400 line-through text-sm">${(price * 1.2).toFixed(2)}</span>}
