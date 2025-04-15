@@ -1,41 +1,62 @@
 
 import { Truck, ShieldCheck, RotateCcw, Clock } from "lucide-react";
+import { motion } from "framer-motion";
 
 const FeatureHighlights = () => {
   const features = [
     {
       icon: Truck,
-      title: "Free Shipping",
-      description: "On all orders over $50"
+      title: "Express Delivery",
+      description: "Free shipping on premium orders",
+      gradient: "from-purple-500 to-pink-500"
     },
     {
       icon: ShieldCheck,
-      title: "Secure Payments",
-      description: "100% protected transactions"
+      title: "Secure Shopping",
+      description: "100% protected transactions",
+      gradient: "from-blue-500 to-cyan-500"
     },
     {
       icon: RotateCcw,
       title: "Easy Returns",
-      description: "30-day return policy"
+      description: "30-day hassle-free returns",
+      gradient: "from-green-500 to-emerald-500"
     },
     {
       icon: Clock,
       title: "24/7 Support",
-      description: "Dedicated customer service"
+      description: "Round-the-clock assistance",
+      gradient: "from-orange-500 to-red-500"
     }
   ];
 
   return (
-    <section className="py-12 border-y border-gray-100">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+    <section className="py-20 relative overflow-hidden">
+      {/* Background pattern */}
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-50 to-white opacity-70"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
-            <div key={index} className="flex flex-col items-center text-center">
-              <div className="bg-shop-purple/10 p-3 rounded-full mb-4">
-                <feature.icon className="w-6 h-6 text-shop-purple" />
+            <div 
+              key={index}
+              className="group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+            >
+              <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`}></div>
+              
+              <div className="relative z-10">
+                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.gradient} p-3 mb-6 transform transition-transform group-hover:rotate-6`}>
+                  <feature.icon className="w-full h-full text-white" />
+                </div>
+                
+                <h4 className="text-xl font-semibold mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-pink-600 transition-colors duration-300">
+                  {feature.title}
+                </h4>
+                
+                <p className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
+                  {feature.description}
+                </p>
               </div>
-              <h4 className="font-semibold mb-1">{feature.title}</h4>
-              <p className="text-sm text-gray-500">{feature.description}</p>
             </div>
           ))}
         </div>
