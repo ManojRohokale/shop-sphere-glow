@@ -1,73 +1,103 @@
-# Welcome to your Lovable project
+# Shop Sphere Glow - E-commerce Platform
 
-## Project info
+A modern e-commerce platform built with React, TypeScript, Node.js, and MongoDB, featuring a beautiful UI and robust backend.
 
-**URL**: https://lovable.dev/projects/130385f5-8ebe-4bea-8b11-13fd2cadcb5e
+## 🚀 Features
 
-## How can I edit this code?
+- **Modern UI/UX**: Built with React, Tailwind CSS, and Shadcn UI components
+- **Full Authentication**: User registration, login, and profile management
+- **Product Management**: Browse, search, and filter products
+- **Shopping Cart**: Add, remove, and update items in cart
+- **Payment Integration**: Secure payment processing with Razorpay
+- **Order Management**: Track orders and order history
+- **Admin Dashboard**: Manage products, orders, and users
+- **Responsive Design**: Works seamlessly on all devices
 
-There are several ways of editing your application.
+## 🛠️ Tech Stack
 
-**Use Lovable**
+### Frontend
+- React
+- TypeScript
+- Tailwind CSS
+- Shadcn UI
+- Vite
+- React Router
+- React Context API
+- Axios
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/130385f5-8ebe-4bea-8b11-13fd2cadcb5e) and start prompting.
+### Backend
+- Node.js
+- Express
+- TypeScript
+- MongoDB
+- Mongoose
+- JWT Authentication
+- Razorpay Integration
 
-Changes made via Lovable will be committed automatically to this repo.
+## 📦 Installation
 
-**Use your preferred IDE**
+1. Clone the repository:
+```bash
+git clone https://github.com/ManojRohokale/shop-sphere-glow.git
+cd shop-sphere-glow
+```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+2. Install frontend dependencies:
+```bash
+cd frontend
+npm install
+```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+3. Install backend dependencies:
+```bash
+cd ../backend
+npm install
+```
 
-Follow these steps:
+4. Create a `.env` file in the backend directory with the following variables:
+```
+MONGODB_URI=your_mongodb_uri
+JWT_SECRET=your_jwt_secret
+RAZORPAY_KEY_ID=your_razorpay_key_id
+RAZORPAY_KEY_SECRET=your_razorpay_key_secret
+```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 🚀 Running the Application
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+1. Start the backend server:
+```bash
+cd backend
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+2. Start the frontend development server:
+```bash
+cd frontend
+npm run dev
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+The application will be available at:
+- Frontend: http://localhost:8080
+- Backend: http://localhost:5000
 
-**Use GitHub Codespaces**
+## 📸 Screenshots
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+[Add screenshots of your application here]
 
-## What technologies are used for this project?
+## 🤝 Contributing
 
-This project is built with:
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 📝 License
 
-## How can I deploy this project?
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-Simply open [Lovable](https://lovable.dev/projects/130385f5-8ebe-4bea-8b11-13fd2cadcb5e) and click on Share -> Publish.
+## 👨‍💻 Author
 
-## Can I connect a custom domain to my Lovable project?
+- **Manoj Rohokale** - [GitHub Profile](https://github.com/ManojRohokale)
 
-Yes, you can!
+## 🙏 Acknowledgments
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- [Shadcn UI](https://ui.shadcn.com/) for the beautiful UI components
+- [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
+- [Vite](https://vitejs.dev/) for the fast development experience
